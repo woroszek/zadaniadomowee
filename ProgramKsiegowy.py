@@ -30,23 +30,16 @@ def item_cost(item):
             koszt = i[1]['koszt']
             return koszt
 
-def item_in_cost(item):
-    for i in warehouse:
-        if i[0] == item:
-            cena = i[1]['koszt']
-            return cena
-
-def history_number(od, do):
+def history_number(od, do, a=0):
     od = int(od)
     do = int(do)
     if od > 0:
         for i in history:
-            a = history.index(i) + 1
-            if a >= od and a <= do:
-                print(f'Opercja numer: {history.index(i)+1} to  {i}')
-                print('***************************************************')
-            else:
+            a = a + 1
+            if a < od or a > do:
                 continue
+            print(f'Opercja numer: {a} to  {i}')
+            print('***************************************************')    
 
 while True:
     print('Podaj komendę. Wpisz pomoc, jeśli chcesz zobaczyć dostępne komendy')
