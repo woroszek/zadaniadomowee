@@ -118,14 +118,8 @@ def isin(aa):
 
 
 
-students = [
-    # ['3C', ['KRZYSZTOF WOROCH', 'MAREK FLORCZAK', 'MARCIN BLACHNIEREK']],
-    # ['2A', ['MICHAL PACZA']],
-    # ['1B', ['Marek PACZA']]
-    ]
-subjects = {"JAN KULA": {"math": ["2A", "3C"], "physics": ["1B"]},
-            "Anna Nowak": {"biology": ["2A", "11d"], "chemistry": ["2A"]}
-}
+students = []
+subjects = {}
 preceptors = {}
 
 
@@ -204,6 +198,22 @@ while True:
                         print(f'{imie} uczy {a} w klasach: {sorted(b)}')
                 else:
                     print('Podany nauczyciel nie istnieje')
+                stop()
+            elif instr2 == 'W':
+                naucz.name = input('Podaj imię wychowawcy: ').upper()
+                naucz.lname = input('Podaj naziwsko wychowawcy: ').upper()
+                naucz.full_name()
+                imie = naucz.fullname
+                if imie in preceptors.keys():
+                    print(f'{imie} jest wychowawcą następujących uczniów:')
+                    for a in preceptors[imie]:
+                        for c, d in students:
+                            if a in c:
+                                for g in d:
+                                    print(f'Klasa {c}: uczeń: {g}')
+                else:
+                    print('Brak podanego wychowawcy.')  
+                stop()                  
             elif instr2 == 'K':
                 stop()
                 break
@@ -211,7 +221,3 @@ while True:
         break
     else:
         print('Błędna instrukcja. Spróbuj ponownie.')
-    print(students)
-    print(subjects)
-    print(preceptors)
-
