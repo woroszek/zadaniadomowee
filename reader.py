@@ -30,4 +30,4 @@ except IndexError:
     print('Poprawna instrukcja dla programu to:')
     print('python reader.py <plik_wejsciowy> <plik_wyjsciowy> <zmiana_1> <zmiana_2> ... <zmiana_n>')
 except FileNotFoundError:
-    print('Podany plik, który pragniesz zmodyfikować, nie istnieje') 
+    print('Podany plik, który pragniesz zmodyfikować, nie istnieje')
