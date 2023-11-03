@@ -1,11 +1,12 @@
 import sys, csv
 
-csv_items = []
-csv_in = sys.argv[1]
-csv_out = sys.argv[2]
-item_to_modi = []
-
 try:
+
+    csv_items = []
+    csv_in = sys.argv[1]
+    csv_out = sys.argv[2]
+    item_to_modi = []
+
     with open(csv_in) as f:
         reader = csv.reader(f)
         for line in reader:
